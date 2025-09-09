@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in html</title>
+</head>
+<body>
+    <form action="post">
+        <div>
+            <label for="username">Enter your username</label> <!--'label' ka use kiya jata hai, jo yaha input le rhe hai
+            use btane ke liye ki kya input aayega yaha and 'for' attribute ka use hota hai ye btane ke liye ki ye label kis
+            input ke liye hai and id deni hogi input wale tag me taki identify ho ske-->
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <div>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <!--yaha dono radio wale me 'name' attribute same kar diya, iski help se ham at a time ek hi select
+            kar sakte hai. Yaha agar apne label par click karte hai to apne aap check ho jaata hai and agar 'for'
+            attribute me and id me difference hua to aise choose nhi ho paaega.-->
+        </div>
+        <div>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe to newsletter</label>
+        </div>
+        <div>
+            <label for="comment">Enter your comment: </label>
+            <textarea id="comment" name="comment" rows="4" cols="50">Enter your comment here </textarea>
+        </div>
+        <div>
+            <select name="Fruits">
+                <option value="Apple">Apple</option>
+                <option value="Banana">Banana</option>
+                <option value="Cherry">Cherry</option>
+            </select>
+        </div>
+        <div>
+            <label for="age">age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="18" max="27">
+        </div>
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images - By Anmol</title>
+</head>
+<body>
+    <img width="670" height="400" src="Image.png" alt="Nissan GTR image"> <!--"img" tag ka use image add karne ke liye kiya jaata hai. "src" me source add karenge image ka and "alt" me vo cheej likhi jaati hai jo
+                                                     hame dikhani hai agar image by any means load na ho to. "width" and "height" attributes ka use image ki size ko set karne ke liye kiya jaata hai, agar width and 
+                                                     height me se koi ek rakhe to dusra apne aap adjust ho jaata hai.-->
+
+    <table>
+    <tr> <!--It's for table row. Table row me kya kuch aaega-->
+        <th>Name</th> <!--It's for table header/heading-->
+        <th>Age</th>
+        <th>Fav. Language</th>
+    </tr>
+    <tr>
+        <td>Anmol</td> <!--It's for table data-->
+        <td>19</td>
+        <td>JavaScript</td>
+    </tr>
+    
+    <tr>
+        <td>Vishwash</td> <!--It's for table data-->
+        <td>18</td>
+        <td>JavaScript</td>
+    </tr>
+</body>
+</html>
+
+<!--Colspan: iska matlb hai ki kitne columns me ek hi cheej likhni hai and ise likha jaata hai: "<td colspan = "value(kitne columns tk likhna hai)"> (Any data jise likhna hai) </td>"
+Rowspan: iska matlb hai ki kitne rows me ek hi cheej likhni hai and ise likha jaata hai: "<td rowspan = "value(kitne rows tk likhna hai)"> (Any data jise likhna hai) </td>"
+like as follows: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table - By Anmol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table border="1">
+        <caption>Employee details:</caption> <!--It's for table caption-->
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Fav. Language</th>
+        </tr>
+        <tr>
+            <td>Anmol</td>
+            <td>Programmer</td>
+            <td>JavaScript</td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">Vishwash</td> <!--aise hi apne rowspan ka use kar skte hai jaha jrurt pade-->
+            <td>JavaScript</td>
+        </tr>
+</body>
+</html>

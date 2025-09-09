@@ -1,0 +1,57 @@
+<!-- Write html and css style a paragraph inside a div which contains 5 other paragraphs. The first paragraph
+must have background color yellow and text color red. The other paragraphs must have background color blue
+and text color white. The html is written below for your reference. Do not change this html structure. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p{
+            color: rgb(255, 243, 225);
+            background-color: rgb(45, 45, 201);
+        }
+        div p:nth-child(1){
+            color: red;
+            background-color: yellow;
+        }
+
+        /* OR */
+
+        /* First paragraph inside each div */
+        div p:first-child {
+            background-color: yellow;
+            color: red;
+        }
+
+        /* All other paragraphs inside each div */
+        div p:not(:first-child) {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Quam laborum placeat officia, tempora molestias asperiores
+            non, ipsum ab quas maiores, officiis rem qui?
+        </p>
+        <p>I am a para</p>
+        <p>I am also a  para</p>
+    </div>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Quam laborum placeat officia, tempora molestias asperiores
+            non, ipsum ab quas maiores, officiis rem qui?
+        </p>
+        <p>I am a para</p>
+        <p>I am also a  para</p>
+    </div>
+</body>
+
+</html>
