@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Properties</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            border: 2px solid blueviolet;
+            /* display: inline; Ye property block elements ko inline bnati h. */
+            /* margin and padding lagayenge to top par nhi lgegi as inline bnaya hai
+            and top pr lgane ke liye inline-block use krna padega, and aise hi width property par
+            bhi effect padega.*/
+            display: inline-block;
+            margin: 22px; 
+            padding: 30px;
+            width: 200px;
+        }
+
+        .box1{
+            /* display:none;
+            visibility: hidden; */
+            /*none se to poora element hi gayb ho jaayega means show nhi hoga, but
+            agar apne visibility: hidden karte hai to element to gayb hoga but usne jo space liya tha,
+            vo reh jaaega.*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        I am a div.
+    </div>
+    <div class="box">
+        I am another div.
+    </div>
+    <span>I am first box</span>
+    <span>I am second box</span>
+</body>
+</html>
