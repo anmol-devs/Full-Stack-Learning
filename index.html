@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(250, 250, 250);
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            padding: 10%;
+        }
+
+        .card {
+            background-color: white;
+            width: 248px;
+            height: 395px;
+            border-radius: 7px;
+            padding: 0 0 5px 0; /* top-right-bottom-left = sequence */
+            margin: 12px;
+            box-shadow: 0px 0px 20px 0px rgb(225, 225, 225);
+        }
+        
+        .image {
+            padding: 13px 10px 6px 12.5px; /* .image wale container me agar border-radius lgani hai to pehle border dena padega and img me image to hoti hi hai to easily border-radius lagg jaaegi. */
+        }
+        
+        .image img {
+            border-radius: 7px; /* agar img me padding lgani hai to pehle img ki display ko block bnana padega as it only applies to block-level elemenets */
+            /* box-shadow: 0px 0px 9px -1px rgba(215, 1, 1, 0.673); */
+        }
+
+        .content {
+            padding: 8px 10px 6px 12px; /* isse poore div pe same padding lagg jaaegi. */
+            font-family: "Poppins", sans-serif;
+        }
+
+        .content p {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .capsules {
+            padding: 0 13px; /* top-bottom se 0 padding and left-right se 10px. */
+            font-family: "Poppins", sans-serif;
+        }
+
+        .capsules span {
+            background-color: rgba(255, 254, 254, 0.886);
+            color: gray;
+            border: 0.2px solid gray;
+            padding: 1.5px 6px;
+            border-radius: 15px;
+            font-size: 11px;
+        }
+
+        .button {
+            text-align: center; /* poora button hi center me aa jaayega. */
+            /* ab button me padding nhi di as same iski bhi display ko block bnana padega pehle. */
+        }
+
+        .button button{
+            padding: 6px 12px;
+            border-radius: 12px;
+            color: rgb(12, 74, 140);
+            background-color:  rgb(230, 242, 255);
+            font-family: "Poppins", sans-serif;
+            font-size: 9px;
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgb(196, 224, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <div class="image">
+            <img src="2.png" alt="Net sahi kijiye" width="222px" height="145px">
+        </div>
+
+        <div class="capsules">
+            <span>Deadpool</span>
+            <span>Red</span>
+        </div>
+
+        <div class="content">
+            <h2>Anmol Singh</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad delectus eius minus ipsum, autem quae sit neque modi recusandae quasi exercitationem, quisquam incidunt?</p>
+        </div>
+
+        <div class="button">
+            <button>Read More</button>
+        </div>
+
+    </div>
+    
+    <div class="card">
+
+        <div class="image">
+            <img src="2.png" alt="Net sahi kijiye" width="222px" height="145px">
+        </div>
+
+        <div class="capsules">
+            <span>Deadpool</span>
+            <span>Red</span>
+        </div>
+
+        <div class="content">
+            <h2>Anmol Singh</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad delectus eius minus ipsum, autem quae sit neque modi recusandae quasi exercitationem, quisquam incidunt?</p>
+        </div>
+
+        <div class="button">
+            <button>Read More</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
