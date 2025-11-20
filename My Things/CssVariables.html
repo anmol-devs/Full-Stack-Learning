@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* :root acts as a global storage space where you define main variables (like colors and fonts)  to use anywhere on your website.
+        It allows you to control your entire theme from one place, so changing a value here updates it everywhere instantly. */
+        :root {
+            /* Variables ka name apne koi bhi rkh skte hai and bas aage apne ko in variables ko jaha par use karna hai vaha ke according apne in variable ko define karenge.  */
+            --color: rgb(7, 102, 166);
+            --seccolor: rgb(116, 175, 214);
+            /* Ye ek apno ne variable declare kra hai and iski mdad se apne kai jagah pr colors use krenge jo is variable me define hai. And jaise jaise apne is root me colors change krenge vaise vaise vaha vaha color change hoga jaha is variable ka color use hua h. Variable ka isliye use krte hai like agar ek website me color ko 100 jgh use kara jaa rha hai to ek-ek krke thodi na change krenge, ek baar me sbka change kar denge, and apne website ki color theme ko change kar denge just ek value ko change karke.*/
+            --tempcolor: rgb(252, 200, 45);
+            /* Apne sirf color ka variable hi nhi or bhi kai properties ka variable bna skte hai jaise ki: */
+            --defpad: 20px;
+            --defop: 0.5;
+        }
+
+        .nav {
+            background-color: var(--color);
+        }
+
+        .container {
+            background-color: var(--seccolor);
+        }
+
+        ul {
+            display: flex;
+        }
+
+        ul li {
+            opacity: var(--defop);
+            list-style-type: none;
+            /* padding: 30px; */
+            padding: var(--defpad);
+            box-sizing: border-box;
+            border: 4px solid var(--tempcolor);
+            /* variable ko apne border me bhi use kr skte hai. */
+        }
+
+        /* Following way, we select every li that comes immediately after another li: */
+        ul li+li {
+            border-left: 0;
+            /* Isse apne agar do borders add ho rhe hai like li ke 4+4=8 ban rhe hai yaha to iski mdad se apne next item ka left side ka border 0 krke dono ka border 4 kar denge, no addition. */
+        }
+
+        ul li:first-child {
+            --color: rgb(164, 217, 244);
+            /* Ab apno ne is variable ko is part me overwrite kr diya hai and ab yaha ka bg color ye overwrite wala hi hoga chahe upr global scope me color me koi bhi change hota rhe. */
+            background-color: var(--color, white);
+            /* Agar color naam ka variable (--color) available hi nhi hai to uski place me ye comma ke baad wala use hoga. */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, illum dolorem. Necessitatibus suscipit tenetur
+        reprehenderit. A maiores est at illo, nemo qui corporis harum cumque nisi excepturi eum reprehenderit soluta
+        magni alias ad aut commodi doloribus? Nostrum neque cumque enim commodi adipisci quisquam ratione quibusdam.
+    </div>
+</body>
+
+</html>
