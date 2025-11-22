@@ -3,57 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Media Queries</title>
-    <style>
-        body {
-            background-color: rgb(24, 105, 172);
-        }
-
-        h2 {
-            color: antiquewhite;
-        }
-
-        /* SYNTAX of media query:
-        @media not|only media-type and (condition) {
-              CSS rules
-        } */
-        /* Here, "not" means ya to is "media-type" pr mat dikhao and "only" means ki sirf is "media-type" pr dikhao. "media-type" jaise all, print(agar website ko printer wgera pr view ho rhi hai), screen(common), and speech devices(jo log dekh nhi skte unke liye). Media Query ka use responsive designs bnane ke liye kiya jaata hai. */
-        @media only screen and (max-width: 455px) {
-            body {
-                background-color: rgb(199, 163, 15);
-            }
-
-            .boxes {
-                flex-direction: column;
-            }
-
-        } /* Yaha max-width ka mtlb hai ki 0 se lekder 455px tk ki width pr braces{} me jo css ke rules hai vo apply honge. And if min-width hoti to 455px ke baad ye rules apply honge. */
-
-        .boxes {
-            display: flex;
-        }
-        
-        .box {
-            background-color: rgb(245, 252, 255);
-            height: 200px;
-            width: 200px;
-            padding: 3px;
-            margin: 5px;
-        }
-
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <div>
-        <h2>
-            Hey! I am a Blue Body Guy!!
-        </h2>
-
-        <div class="boxes">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-        </div>
-    </div>
+    
 </body>
 </html>
