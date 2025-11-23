@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        img {
+            /* float: right; */
+            float: left;
+            /* Isse image apni right side content ko aane degi and like agar text jyada hai to image text ko cut nhi kregi. And ise pehle use krte the. */
+            /* float ki condition me agar image badi hai apne container se to vo overflow ho jaaegi, and ise solve krne ke liye apne 'display: flow-root;' ka use krenge. */
+            display: flow-root;
+        }
+
+        /* Agar ham chahte hai ki content jo ki yaha card 2 ki jagh likha gya hai, vo content ke right side me koi element float na kre to ham 'clear' ka use krte hai. */
+        .card:nth-child(3) {
+            background-color: aquamarine;
+            clear: left;
+        }
+
+        .cards {
+            border: 2px solid black;
+        }
+
+        .card {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <img src="2.png" alt="Net sahi karooooo!!!!!!" width="230px">
+
+        <div class="card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum commodi repellat voluptate!
+            Hic praesentium et ab maiores commodi dolores, maxime dicta animi consequuntur sunt. Minus quas soluta
+            numquam. Reprehenderit fugit ipsa nihil cum cupiditate?
+        </div>
+
+        <div class="card">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque iste repudiandae aut, aliquam
+            ipsam ducimus tempore, unde sed debitis mollitia earum magni, blanditiis ipsa quisquam dolores a temporibus
+            numquam! Debitis consectetur eos nam, esse ipsum, tempore aliquam at fuga totam deleniti facilis eum
+            eligendi aperiam cum quis possimus iste harum perferendis! Enim eligendi nostrum quaerat delectus laudantium
+            atque est minima id quis consequuntur, nihil totam, sed hic unde tempora blanditiis optio velit quasi vel
+            iste. Nemo aut illum porro corporis officiis alias error aspernatur possimus facere distinctio, non illo
+            odio nisi optio dolore expedita a in repudiandae ab deserunt dolorem. Temporibus similique qui minima
+            dignissimos. Iste sapiente inventore quidem expedita. Expedita delectus maxime veniam quas tempora explicabo
+            quod vel dolore nesciunt? Quisquam quis ipsam, molestias adipisci corporis, qui necessitatibus tempora
+            veritatis nisi voluptatibus, vero veniam reiciendis aliquid aliquam doloribus expedita? Reprehenderit eos
+            exercitationem dolores est doloremque. Sit maxime nostrum, tempore explicabo, mollitia nobis voluptates
+            quisquam molestiae esse iusto facilis molestias harum adipisci inventore aspernatur illo corrupti veritatis
+            optio alias quam ea odio praesentium. Veritatis quis qui dolore natus tempore? Distinctio perferendis
+            accusamus tempora ipsam culpa doloremque vero, blanditiis ducimus? Culpa dolore doloremque vel quod veniam,
+            sequi placeat nostrum aut quibusdam possimus vero impedit eum minus eligendi eveniet deserunt repellendus
+            iste quaerat earum ea cumque sit, officiis eaque. Explicabo, repellat eaque, voluptatum veritatis non
+            architecto molestias reiciendis odio, cupiditate amet nesciunt eius earum dicta. Accusantium eius incidunt
+            consectetur molestias quis natus fugit voluptas, omnis reiciendis minima a itaque ea praesentium. Aspernatur
+            dolores, et numquam quas necessitatibus perspiciatis accusantium, optio obcaecati ad id ducimus recusandae,
+            rerum quibusdam dignissimos nesciunt doloremque cum? Accusamus labore, rem laboriosam quia voluptatum sequi
+            ullam deserunt eum officia architecto expedita magni natus fugit quae voluptatem recusandae quas porro velit
+            molestias. Aperiam dolorum praesentium consectetur modi fugiat minima veritatis pariatur excepturi soluta
+            consequuntur sequi perferendis exercitationem aut maxime sint vitae, neque nemo labore. Nisi rem consectetur
+            commodi dignissimos, illo deleniti adipisci. Eos rem, culpa ab asperiores ipsum amet nostrum modi expedita
+            possimus!</div>
+
+        <div class="card">Card 3</div>
+    </div>
+</body>
+
+</html>
