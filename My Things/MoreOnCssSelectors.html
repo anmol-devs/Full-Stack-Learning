@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Selectors</title>
+    <style>
+        .box:first-child{ /* box class ka first child */
+            background-color: brown;
+        }
+
+        .box::first-line { /* ye poore content ki sirf first line (jo particular device me render hogi) par specific property lga dega. */
+            color: yellow;
+        }
+
+        .boxes *{ /* boxes ke andr ke saare elements ka color ye blue kr dega. */
+            color: blue;
+        }
+
+        [data-color="primary"] { /* Jaha jaha ye attribute hai vaha vaha ye property lag jaayegi. */
+            padding-top: 45px;
+        }
+        
+        p, a, .box, [data-color="primary"] { /* Ye wala grouping kra hai, ise har p, a, .box, and [data-color="primary"] me ye property lag jaaegi. */
+            padding-top: 45px;
+        }
+
+        .box:nth-child(even){ /* ye even/odd number waalo ko select krega */
+            color:aquamarine;
+        }
+
+        .box:nth-last-child(1) { /* neeche se pehla child */
+            color: red;
+        }
+
+        .boxes::before { /* Ye selector boxes ke main content se pehle apna alag se content daal dega. Is property ki mdad se element ko css ke through content properties etc. ko dynamically insert kiya ja skta h. */
+            content: "This content is before the main content.";
+            color: red;
+        }
+        /* in dono ko pseudo-elements kaha jaata h (jo :: se access hote h) */
+        .boxes::after { /* Ye selector boxes ke main content ke baadme apna alag se content daal dega. Is property ki mdad se element ko css ke through content properties etc. ko dynamically insert kiya ja skta h. */
+            content: "This content is after the main content.";
+            color: blue;
+        }
+
+        ::selection { /* Ye abhi elements pr following properties lagayega jab user select krega kuch on the page. Ye apne particular elements par bhi laga skte h. */
+            background-color: black;
+            color: aqua;
+        }
+
+        .box::first-letter { /* first letter pr property lagane ke liye hai ye. */
+            color:cornflowerblue;
+            font-size: 27px;
+        }
+
+        input::placeholder {
+            color: rgb(134, 129, 129);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">Hey, I am a box</div>
+        <div class="box">Hey, I am a box</div>
+        <div class="box">Hey, I am a box</div>
+        <input type="text" placeholder="Type your name here!!">
+    </div>
+</body>
+</html>
