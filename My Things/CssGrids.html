@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <style>
+        /* Ab saare container ke items normally vertically align hote hai. And ab agar apne ko apne koi or treeke se unhe align karna hai to ye ek problem thi, and ise solve krne ke liye flexbox aya h. */
+        .container{
+            border: 5px solid black;
+            /* flexbox ki property items pr nhi lagegi, main conatiner pr lagegi jisme items hai. And isse saare elements left-to-right align ho jaayenge. */
+            display: flex;
+            height: 80vh;
+            justify-content: center; /* Agar apne chahte hai ki saare elements horizontally centre me align ho jaaye to apne is property ka use krenge. Isse container ke saare elements center me align ho jaayenge.  */
+            align-items: center; /* Isse saare items vertically center ho jaayenge. */
+            flex-direction: column; /* By default flex ki direction left to right hoti hai. And apne ise change kar skte hai like yaha pr "column" kari hai means saare items ko column me kr dega, and if apne column-reverse krte hai to reverse ho jaaenge items, upr waale neeche. Same for "row". */
+
+            /* TWO AXIS: Do axis hoti hai flex-direction me: Jis direction me items align ho rhe hai jaise row me, to row waali direction me jo axis hai use apne "main-axis" kehte hai and jis direction me items align nhi ho rhe hai, unhe apne "cross-axis" kehte hai. 
+            Jo "justify-content" and "align-items" waali properties hoti hai vo in axis ke according hi work krti hai. Like jab apne kehte hai ki "justify-content: center;" to vo kehta hai ki "main axis" pr center krdo. And ye horizontally ya vertically ke hisaab se nhi work krta, ye main axis ke according hi work krta hai, jaha main axis hai usi ke according center ya different values lagayega.
+            Also, "cross start" and "cross end", "cross axis" ke start and end hote hai. Similarly "main start" and "main end" bhi. And aise hi "cross size" and "main size" hota hai. */
+
+            /* FLEX-WRAP: wrap ka mtlb agar items jyada hai to vo us container ke andr hi rhenge, ek treeke se lipat jaaenge ek ke baad ek neeche aate jaaenge but container ke bahar nhi jaayenge. */
+            flex-wrap: wrap;
+
+            /* ALIGN-CONTENT: jab apne paas ek se jyada lines ho jaati hai, rows ho jaati hai, and apne chahte hai ke ye sb lines center me ya koi or jagh aa jaaye to apne "align-content" ka use krte hai. Ye main tb use hota hai jab apne paas more than 1 line hai, vrna "align-items" ko hi use kr skte hai apne. */
+            align-content: center;
+
+            /* FLEX-FLOW: syntax: <flex-direction> <flex-wrap> "flex-flow" hame ye do properties ko ek saath use krne ke kaam aata h.*/
+            flex-flow: row wrap;
+
+            /* GAP: ye saare items ke beech ka gap define karta hai */
+            gap: 30px;
+            /* "row-gap" and "column-gap" bhi hote hai rows/columns ke beech ke gap ke liye. */
+            row-gap: 20px;
+            gap: 40px 20px; /* ye ek short-hand hota hai row gap and column gap ke liye. */
+        }
+
+        /* upr to hogyi container ki property in "FLEXBOX", ab neeche apne items ki property lgayenge in "FLEXBOX": (Ye sab properties yaad rkhni padengi) */
+        .item{
+            /* FLEX-GROW: (ye waise smjhne ke liye apne kuch limited number of items pr lgaenge, ki ek row me hi ho elements), be default, flex-grow: 0 hota hai. And agar apne flex-grow: 1 krte hai to iska mtlb hai ke jo saare elements hai vo poori width me aaenge equal width lete for each.  */
+            flex-grow: 1;
+
+            height: 82px;
+            width: 82px;
+            margin: 10px;
+            border: 5px solid rgb(0, 0, 0);
+            background-color: rgb(0, 247, 255);
+        }
+
+        .item-1 {
+            flex-grow: 2; /* Iska mtlb hai ye akela item do items ki jagh le lega. Saare items ek hi row me aaenge and ye wala jo particular item hai, iski width bdhti rhegi agar apne iska flex-grow bdhate hai like 10-20 like kuch karte hai to. But saare elements ek row me hi rhenge. */
+
+            /* FLEX-SHRINK: Like jaise neeche 2 di hai value means agar apne width choti krte hai like bde se koi chota device me shift kre to baaki sb item chote honge ek jaise but, item-1 jispe flex-shrink waali property lagi hai to ye item baakiyo ke muqable double speed se shrink hoga. */
+            flex-shrink: 2;
+
+            /* ALIGN-SELF: isse apne koi particular item ko flex ki start, end, center me lga skte hai, jo item chahe vo. Like neeche item-1 ko flex ke last me lgaya hai and baaki center me hai. */
+            align-self: flex-end;
+        }
+
+        /* ORDER PROPERTY: apne particular item ko order de skte hai, and jis item ka jo order hoga vo us order ke hisaab se hi aayega like agar order: 1 hai to sbse pehle and if 100 items hai and kisi item ka order: 100 karde to sbse last me chla jaaega, and aise hi apne order property ka use krke sbhi elements ko ek order ke hisaab se lga skte hai. Jaise neeche item number 7 ka order: 1 kara hai apno ne. Jitna kam order hoga utna pehle aaega and jitna jyada order hoga utna baadme element aaega. And default order: 1 hota h. Ab jaise neeche order: 1 diya hai do elements ko to vo sbse last me gye as default order: 0 hota hai. */
+        .order-1{
+            order: 1;
+        }
+
+        .order-2{
+            order: 2;
+        }
+
+        .order-3{
+            order: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item order-1">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item order-1">100</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
