@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grids</title>
+    <!-- Grids ka use layouts design ke liye kiya jata h. -->
+    <style>
+        .container{
+            border: 4px solid black;
+            display: grid; /* Ye grid me divide krdega ek container ko */
+            /* grid-template-columns: 120px 100px; Ye do column grids bnayega jisme pehle column ki grid 120px hogi, and dusre column ki 100px. Ab is grid me apne kisi bhi element ko kahi bhi place kra skta hai. Ab maan lo apne elements add kr rhe hai grid me to pehla element 120px waali grid column me aayega and dusra 100px waale me and aise hi chlta jaaega, and ise kehte hai "auto configure hona". And apne apni or se jaisa chahe vaise items ko place bhi kar skte hai. */
+            
+            /*
+            TERMS:
+                "GRID TRACK": koi bhi do grid lines ke beech ke space ko grid track kehte hai. Starting se end tk saari space include ki jaati hai.
+                "GRID AREA": Koi bhi do horizontal and do vertical lines ke beech ke area ko gird area kehta hai.
+            */
+
+            grid-template-columns: 120px 100px;
+            grid-template-rows: 100px 100px 100px; /* 3 rows bna di grid me 100px each. */
+
+            /* Agar apne ko apne hisaab se naming deni hai rows and columns ko to aise kr skte hai: */
+            grid-template-columns: [fc]120px [sc]100px [tc];
+            grid-template-rows: [fr]100px [sr]100px [tr]100px [four-r];
+
+            /* Let's assume container ki width: 80vw; hai to apne agar chahte hai ki is width ke 3 equal tukde ho jaaye to apne neeche wala way use krenge: */
+            width: 80vw;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr; /* "fr" ek unit hoti hai jo mainly grid me use ki jaati hai, and fr means fraction like yaha par jaise 1 fraction, 1 fraction, 1 fraction, means 1/3rd, 1/3rd, 1/3rd hogya us poori width ka. And if 4 baar likhenge ise to ye 1/4th krke ho jaayega. */
+            grid-template-columns: 1fr 2fr 1fr; /* Agar aise krte hai to it means ki beech wala baaki dono se dugni width lega. */
+            /* Agar maanlo ki apne ko 1fr ko 5 baar repeat krna hai to apne "repeat()" function ka use kr skte hai. */
+            grid-template-columns: repeat(5, 1fr);
+            /* Apne "minmax()" function ka bhi use kr skte hai: */
+            grid-template-columns: repeat(5, minmax(100px, 1fr)); /* It means ki minimum width hogi 100px, and maximum hogi 1fr, and 1fr depend krega ki kitne 1fr bna rhe hai apne. Ek important function hai ye. */
+
+            /* Apne gap property ka bhi use kr skte hai grid me. And apne row-gap and column-gap bhi alag se set kr skte hai. Flexbox and grid me paddding margin ki bjaye gap jyada faidemand hota hai. */
+            gap: 34px;
+            row-gap: 10px;
+            column-gap: 44px;
+
+            /* Apne "align-items" and "justify-items" properites ka bhi use kr skte hai jise apne apne box me vo center me kiye ja skte hai. Apne end, start vgera properties bhi lga skte hai. */
+            align-items: center;
+            justify-items: center;
+            /* Apne items me bhi "align-self" and "justify-self" ka use kar skte hai for particular item. */
+
+            /* And "justify-content" tab hi laagu hoga jab apna container bda hai and grid choti hai to grid ki position set krne ke liye hi justify-content ka use krenge apne. Vrna agar grid ke andr andr me hi krna hai to apne "justify-items" and "align-items" ka use krenge. */
+            grid-template-columns: repeat(4, 80px);
+            justify-content: center;
+            /* Same hi way me apne "align-content" lga skte ho for vertical, for rows like: */
+            grid-template-rows: repeat(2, 80px);
+            align-content: center;
+            /* And if apne "place-content" use krte hai to "justify-content" and "align-content" dono ek saath use ho jaaenge: */
+            place-content: center;
+        }
+
+        .item{
+            border: 4px solid red;
+            height: 55px;
+            /* width: 55px; */
+        }
+
+        /* Ab agar ham chahte hai ki ye jo item-4 hai use koi specific position pr rkhna chahte hai to maanlo jaise ham chahte hai ki ye item-4 ki row 1 se start ho and 2 tk jaaye and same for column, to neeche diye gye treeke se position kr skte hai. Apne 1 se leker 3 tk, 1 se 4, 2 se 3, kaise bhi place kr skte hai. And if apne width/height hta denge to grid me jitna space hai jo apno ne upr diya hai, vo poora space occupy kar lega vo item. */
+        .item-4 {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        /* Agar ham chahe ki item-1 bhi upr waali position pr aaye to same property apne item-1 me lga denge and overlap ho jaaenge ye dono. */
+
+        .item-1{
+            grid-row-start: 2; /* Ye bhi ek treeka hai. Upr wala ek treeke ka short hand hai. */
+            grid-row-end: 4;
+            grid-column: 2/4;
+        }
+
+        /* Ab apno ne jo khudki naming di hai uske according position set kr skte hai. */
+        .item-2{
+            grid-row: tr/four-r;
+            grid-column: sc/tc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item">3</div>
+        <div class="item item-4">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
