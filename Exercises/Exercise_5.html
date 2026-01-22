@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improved Flexbox Layout</title>
+    <title>Professional Layout</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -20,7 +21,7 @@
         header {
             position: sticky;
             top: 0;
-            z-index: 100; /* Content ke upar dikhe */
+            z-index: 100;
         }
 
         nav {
@@ -28,13 +29,33 @@
             height: 70px;
             display: flex;
             align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            /* Logo left me aur links right me karne ke liye */
+            justify-content: space-between; 
+            padding: 0 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        nav h1 {
+        nav .logo {
             color: white;
             font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none; /* Bullets hatane ke liye */
+            display: flex;
+            gap: 25px; /* Links ke beech me gap */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none; /* Underline hatane ke liye */
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c; /* Hover karne par color change */
         }
 
         main {
@@ -46,11 +67,11 @@
             padding: 50px 20px;
             border-radius: 10px;
             
-            display: flex; 
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            gap: 30px; /* Gap between boxes */
-            flex-wrap: wrap; /* Mobile pe neeche aa jaye */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .box {
@@ -58,24 +79,60 @@
             height: 60vh;
             width: 45%;
             min-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            
+            /* Box ke andar ka content center karne ke liye */
+            display: flex;
+            flex-direction: column; /* Upar se neeche content aaye */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .box h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .box p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .box button {
+            padding: 10px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .box button:hover {
+            background-color: #2980b9;
         }
 
         .text-box {
             background-color: white;
             padding: 40px;
-            margin: 50px auto; /* Auto left-right margin se center ho jayega */
-            max-width: 800px; /* Zyada stretch na ho */
+            margin: 50px auto;
+            max-width: 800px;
             border-radius: 15px;
             border: 1px solid #ccc;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         .text-box p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height: 1.6;
+            color: #555;
         }
 
         .fixed-btn {
@@ -87,8 +144,14 @@
             right: 20px;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 2px solid white;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
         }
 
         footer {
@@ -102,35 +165,64 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <nav>
-            <h1>My Website</h1>
+            <div class="logo">SigmaWeb</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <div class="flex-container">
-            <div class="box"></div>
-            <div class="box"></div>
+            <div class="box">
+                <h2>Web Development</h2>
+                <p>
+                    Hum modern aur responsive websites banate hain jo mobile aur laptop dono par shandaar dikhti hain.
+                    Clean code aur fast performance hamari pehchan hai.
+                </p>
+                <button>Read More</button>
+            </div>
+            
+            <div class="box">
+                <h2>Graphic Design</h2>
+                <p>
+                    Attractive logos, banners aur UI designs jo aapke brand ko naya look dete hain.
+                    Hamare designs simple lekin impactful hote hain.
+                </p>
+                <button>View Portfolio</button>
+            </div>
         </div>
 
         <div class="text-box">
-            <p>Welcome to Sigma Web Development Express</p>
+            <p><strong>Welcome to Sigma Web Development Express</strong></p>
             <br>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Scroll karke dekho, navbar stick karega aur red button fix rahega.
+                Ye layout poori tarah se responsive hai. Upar jo Navbar hai wo sticky hai, 
+                matlab scroll karne par bhi wo screen ke top par rahega.
+            </p>
+            <br>
+            <p>
+                Right side neeche ek red button hai jo "Fixed" hai. Page kitna bhi lamba ho, 
+                wo button apni jagah se nahi hilega. Scroll karke try karein!
             </p>
         </div>
 
-        <div class="fixed-btn"></div>
+        <div class="fixed-btn" title="Go to Top">
+            &#8593; </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Sigma Web Dev</p>
+        <p>&copy; 2024 Sigma Web Dev. All rights reserved.</p>
     </footer>
 
 </body>
+
 </html>
