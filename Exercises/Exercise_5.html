@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Content ke upar dikhe */
+        }
+
+        nav {
+            background-color: #2c3e50;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        .flex-container {
+            background-color: #e0e0e0;
+            padding: 50px 20px;
+            border-radius: 10px;
+            
+            display: flex; 
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            gap: 30px; /* Gap between boxes */
+            flex-wrap: wrap; /* Mobile pe neeche aa jaye */
+        }
+
+        .box {
+            background-color: white;
+            height: 60vh;
+            width: 45%;
+            min-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .text-box {
+            background-color: white;
+            padding: 40px;
+            margin: 50px auto; /* Auto left-right margin se center ho jayega */
+            max-width: 800px; /* Zyada stretch na ho */
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .text-box p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .fixed-btn {
+            height: 50px;
+            width: 50px;
+            background-color: #e74c3c;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 2px solid white;
+        }
+
+        footer {
+            height: 100px;
+            background-color: #34495e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>My Website</h1>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flex-container">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <div class="text-box">
+            <p>Welcome to Sigma Web Development Express</p>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Scroll karke dekho, navbar stick karega aur red button fix rahega.
+            </p>
+        </div>
+
+        <div class="fixed-btn"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sigma Web Dev</p>
+    </footer>
+
+</body>
+</html>
