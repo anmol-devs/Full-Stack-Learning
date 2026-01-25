@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1A365D;
+            color: #f4f8ff;
+        }
+
+        header {
+            background-color: white;
+            position: sticky;
+            z-index: 1000;
+            /* z-index help krta hai kisi element ko baakiyo ke upr rkhne ka, like jiska z-index jyada hoga, vo upr rhega. */
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 65px;
+            padding: 0 55px;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1A365D;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            font-weight: 550;
+
+            /* Arrow align karne ke liye flex use karein */
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* Text aur arrow ke beech gap */
+        }
+
+        nav ul li a:hover {
+            color: #3f72b9;
+        }
+
+        .dropdown::after {
+            content: '⌄';
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+
+            /* Isse aap 1-2 pixel upar ya neeche shift karke check karein */
+            transform: translateY(-4.5px); /* vertical axis (y-axis) pr upr neeche hoga. Negative value ka matlab hai Upar khiskaney ke liye. (Positive value neeche khiskayegi) */
+
+            transition: transform 0.4s ease;
+        }
+
+        /* Hover karne par arrow ghoom jaye (Optional effect) */
+        nav ul li a:hover.dropdown::after {
+            transform: translateY(-1px); /* Upr to apno ne btaya ki ye drop-down icon ko -4.5 waali position pr rkho, fir apno ne yaha hover waali me btaya ki ise -1 waali position tk lekr aa jaao. And upr apno ne in dono phases me transition kis treeke se hoga ye btaya. */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="Crodonian Logo Web (inLine).svg" alt="Crodonian">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="dropdown">Products</a></li>
+                <li><a href="#" class="dropdown">Pricing</a></li>
+                <li><a href="#" class="dropdown">Resources</a></li>
+                <li><a href="#" class="dropdown">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+</html>
