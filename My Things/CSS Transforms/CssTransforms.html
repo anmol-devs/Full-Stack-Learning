@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transforms</title>
+    <!-- Transform property se apne items ko different ways se transform kar skte hai.
+         Transform property ka use mainly tb kiya jaata hai, maanlo apne bna rhe hai ek navbar like agar apne chahte hai ki navbar chip jaaye to use kr skte hai (like: -100%). -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            height: 80vh;
+            width: 100vw;
+            border: 2px solid rgb(126, 156, 255);
+        }
+
+        .box{
+            height: 50px;
+            width: 50px;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(255, 204, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* ROTATE PROPERTY: */
+            /* transform: rotate(45deg); */
+            /* Isse apne box ko particular angle par rotate kar skte hai. */
+            /* transform: rotate(0.25turn); */
+            /* turn bhi apne use kar skte hai. 1 turn means 360deg. */
+
+            /* transform: rotateX(87deg); */
+            /* Isse item x-axis ke about rotate hoga. Same apne y-axis and z-axis ke about rotate kar skte hai. */
+
+
+            /* SCALE PROPERTY: */
+            /* transform: scale(1.5); */
+            /* scale property size ko change krti hai item ke. Same rotate ki trh apne x-axis and y-axis par size me difference kr skte hai. */
+            /* transform: scaleX(1.6); */
+            /* transform: scale3d(); */
+            /* Isse 3-d transfomation apply hota hai. */
+
+
+            /* SKEW PROPERTY: */
+            /* transform: skew(5deg); */
+            /* skew property se item tilted sa ho jata h. Same x-axis and y-axis pr bhi use kr skte hai. */
+
+
+            /* TRANSLATE PROPERTY: */
+            /* transform: translateX(87%); */
+            /* translate property aise smjhlo ko apni position se khisk jana. Agar apne pixel kre to utne pixel khiskega and agar apne % use krte hai to us item ki width ki according khiskega. Same apne y-axis par bhi translate kr skte hai.*/
+
+
+            /* EK SE JYADA TRANFORM PROPERTIES KA USE: */
+            /* transform: translateY(100%) skew(40deg) translateX(45%); */
+
+
+            /* TRANFORM ORIGIN PROPERTY: */
+            /* transform: rotate(0.125turn); */
+            /* transform-origin: 0% 0%; */
+            /* transform origin ki jo default property hoti hai vo -50% -50% (x, y) hoti hai. And agar apne ise 0 0 krde to vo container ke origin pr aa jaaega, and fir jo apne rotate krenge vo origin ke around hoga. */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            box
+        </div>
+    </div>
+</body>
+</html>
