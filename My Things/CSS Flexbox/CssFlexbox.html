@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Flexbox</title>
     <style>
-        /* Ab saare container ke items normally vertically align hote hai. And ab agar apne ko apne koi or treeke se unhe align karna hai to ye ek problem thi, and ise solve krne ke liye flexbox aya h. */
+        /* Saare container ke items normally vertically align hote hai. And ab agar apne ko apne koi or treeke se unhe align karna hai to ye ek problem thi, and ise solve krne ke liye flexbox aya h. */
         .container{
             border: 5px solid black;
             /* flexbox ki property items pr nhi lagegi, main conatiner pr lagegi jisme items hai. And isse saare elements left-to-right align ho jaayenge. */
@@ -37,7 +37,7 @@
 
         /* upr to hogyi container ki property in "FLEXBOX", ab neeche apne items ki property lgayenge in "FLEXBOX": (Ye sab properties yaad rkhni padengi) */
         .item{
-            /* FLEX-GROW: (ye waise smjhne ke liye apne kuch limited number of items pr lgaenge, ki ek row me hi ho elements), be default, flex-grow: 0 hota hai. And agar apne flex-grow: 1 krte hai to iska mtlb hai ke jo saare elements hai vo poori width me aaenge equal width lete for each.  */
+            /* FLEX-GROW: (ye waise smjhne ke liye apne kuch limited number of items pr lgaenge, ki ek row me hi ho elements), by default, flex-grow: 0 hota hai. And agar apne flex-grow: 1 krte hai to iska mtlb hai ke jo saare elements hai vo poori width me aaenge equal width lete for each.  */
             flex-grow: 1;
 
             height: 82px;
@@ -57,7 +57,7 @@
             align-self: flex-end;
         }
 
-        /* ORDER PROPERTY: apne particular item ko order de skte hai, and jis item ka jo order hoga vo us order ke hisaab se hi aayega like agar order: 1 hai to sbse pehle and if 100 items hai and kisi item ka order: 100 karde to sbse last me chla jaaega, and aise hi apne order property ka use krke sbhi elements ko ek order ke hisaab se lga skte hai. Jaise neeche item number 7 ka order: 1 kara hai apno ne. Jitna kam order hoga utna pehle aaega and jitna jyada order hoga utna baadme element aaega. And default order: 1 hota h. Ab jaise neeche order: 1 diya hai do elements ko to vo sbse last me gye as default order: 0 hota hai. */
+        /* ORDER PROPERTY: apne particular item ko order de skte hai, and jis item ka jo order hoga vo us order ke hisaab se hi aayega like agar order: 1 hai to sbse pehle and if 100 items hai and kisi item ka order: 100 karde to sbse last me chla jaaega, and aise hi apne order property ka use krke sbhi elements ko ek order ke hisaab se lga skte hai. Jaise neeche item number 7 ka order: 1 kara hai apno ne. Jitna kam order hoga utna pehle aaega and jitna jyada order hoga utna baadme element aaega. And default order: 0 hota h. Ab jaise neeche order: 1 diya hai do elements ko to vo sbse last me gye as default order: 0 hota hai. */
         .order-1{
             order: 1;
         }
@@ -94,7 +94,7 @@
         <div class="item"></div>
         <div class="item"></div>
         <div class="item"></div>
-        <div class="item order-1">100</div>
+        <div class="item order-2">100</div>
         <div class="item"></div>
         <div class="item"></div>
         <div class="item"></div>
