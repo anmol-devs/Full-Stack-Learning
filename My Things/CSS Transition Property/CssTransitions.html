@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition Property</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            width: 50vw;
+            height: 40vh;
+        }
+
+        .box{
+            background-color: aquamarine;
+            width: 5vw;
+            height: 4vh;
+            /* transition-property: background-color, transform;
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0.22, 0.43, 0, 0.99); */
+            /* transition-delay: 1s; Agar koi transition property lagate hai to uske start hone me kitna time lagega. */
+            transition: all 3s cubic-bezier(0.09, 0.5, 0, 0.99) 1s;
+            /* Ye saari main transition properties jo upr lgai thi 4 apno ne, uska short-hand hai. */
+            /* 'all' se apne saari properties pr transition lga skte hai.
+               'cubic-bezier' wala apne inspect me jaake bna skte h, apne according transition speed set kr skte hai. */
+        }
+
+        .translate{
+            transform: translateX(10vw) translateY(10vh) scale(2);
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate"></div>
+    </div>
+</body>
+</html>
