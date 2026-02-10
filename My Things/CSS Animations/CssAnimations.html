@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <!-- Animations and transitions, dono me ek se jyada properties ko define kar skte hai, but animations me apne define kar skte hai ki konsi property kaha se kaha tk jaaegi, kitne time me jaaegi, kon konse keyframes honge, etc. -->
+    <style>
+        .container{
+            background-color: rgb(9, 106, 106);
+            height: 80vh;
+            width: 30vw;
+        }
+
+        .box{
+            width: 34px;
+            height: 45px; 
+            /* animation-name: harryKaAnimation; 
+            animation-duration: 1s;
+            animation-iteration-count: infinite;  Means kitni baar animation chlega.
+            animation-timing-function: cubic-bezier(0, 0, 0, 0.96);
+            animation-delay: 1s;  Kitne time baad animation start ho.
+            animation-direction: reverse;
+            animation-play-state: paused;  Means animation ke chlne ki state. Ideally apne JS me use krte hai ise. */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode;  Ye short-hand hai animation ki main prooperties ka. Beexh me ek property agar apne miss bhi krde na to bhi chlega. */
+            animation: anmolKaAnimation 2s ease-in-out 3s 1, 
+                       anmol2 3s ease-in-out 3s 1;
+            /* Multiple animations ke liye apne comma-separated values ka use kar skte hai. */
+            /* fill-mode: isme apne color vgera ke changes control kr skte hai with ongoing animation like agar apne 'forward' ka use krte hai, to starting me jo thi property like background-color jo tha, vhi rhega, fir animation start ke time wala background-color aaega fir khtm hone ke waqt jo end me background-color choose kra hai vo aaega and forward agar na ho to backgorund-color firse base wala ho jaaega, but forward use end wala pr rakh dega, and position bhi vhi rh jaaegi.
+            And agar apne 'backwards' use krte ho to vo apne initial styles me aajayga. */
+        }
+
+        @keyframes anmolKaAnimation { /* 'identifier' ki jgh apne animation ka koi bhi name daal skte hai, jaise yaha 'anmolKaAnimation' likha hai. */
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: yellow;
+            }
+        }
+
+        @keyframes anmol1 {
+            from{
+
+            }
+            to{
+                transform: translateX(1000px);
+            }
+        }
+
+        @keyframes anmol2 {
+            0%{
+                transform: rotate(100deg);
+            }
+            20%{
+                transform: rotate(200deg);
+            }
+            50%{
+                transform: rotate(220deg);
+            }
+            80%{
+                transform: rotate(300deg);
+            }
+            100%{
+                transform: rotate(310deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            Box
+        </div>
+    </div>
+</body>
+</html>
