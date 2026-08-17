@@ -10,7 +10,7 @@ export const metadata = {
   description: "I am a blog",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }) { // yaha children ka mtlb hai ki jo bhi page ka content hoga wo yaha aa jaega. jaise apno ne about page me content likha tha, wo yaha aa jaega. ye ek special prop h jo Next.js provide krta h.
   return (
     <html lang="en">
       <body className={inter.className}>
