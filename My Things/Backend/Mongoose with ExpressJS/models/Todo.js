@@ -5,7 +5,7 @@ const TodoSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: "Untitled Todo"
-    },                          // Apne schema me objects ka bhi use kr skte hai jaise title ek object hai, jiski help se apne kuch contraints laga skte hai jaise ki required, default etc.
+    },  // Apne schema me objects ka bhi use kr skte hai jaise title ek object hai, jiski help se apne kuch contraints laga skte hai jaise ki required, default etc.
     desc: String,
     isDone: Boolean,
     days: Number
